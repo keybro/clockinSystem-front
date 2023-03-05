@@ -452,7 +452,7 @@ export default {
             console.log(form.day)
             console.log(form)
             console.log("完了")
-            await console.log("创建排班表")
+            // await console.log("创建排班表")
             var dt = new Date(form.day);
             var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
             var week = dt.getDay();
@@ -462,14 +462,14 @@ export default {
             if(this.choseFun == 1){
               if (week!=0 &&week!=6){
                 //批量添加数据进入schedule表
-                await addSchedule_manage(form).then(response => {
+                addSchedule_manage(form).then(response => {
+                  this.open = false;
+                });
+                addClockin(clockinForm).then(response => {
                   this.open = false;
                 });
                 //批量添加数据到clockin表
                 // await console.log("创建打卡表")
-                await addClockin(clockinForm).then(response => {
-                  this.open = false;
-                });
               }
             }
             //2.如果选择的规则是单休
@@ -532,7 +532,7 @@ export default {
           console.log(response.rows)
       })
       //如果本月有数据，显示不让排班
-      if (this.schedule_manageList.length>=2){
+      if (this.schedule_manageList.length>=1){
         this.no = false
         this.ifCanSchedule = false
 

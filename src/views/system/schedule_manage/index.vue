@@ -424,7 +424,7 @@ export default {
         this.qiangpao_schedule_manageList = response.rows;
         console.log(response.rows)
       })
-      if (this.qiangpao_schedule_manageList.length>=2){
+      if (this.qiangpao_schedule_manageList.length>=1){
         this.ifqiangpao = false;
       }else {
         this.ifqiangpao = true
