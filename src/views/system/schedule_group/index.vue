@@ -476,12 +476,12 @@ export default {
             if (this.choseFun == 2){
               if (week!=0){
                 //批量添加数据进入schedule表
-                await addSchedule_manage(form).then(response => {
+                addSchedule_manage(form).then(response => {
                   this.open = false;
                 });
                 //批量添加数据到clockin表
                 // await console.log("创建打卡表")
-                await addClockin(clockinForm).then(response => {
+                addClockin(clockinForm).then(response => {
                   this.open = false;
                 });
               }
@@ -489,12 +489,12 @@ export default {
             //3.如果选择的规则是不休息
             if (this.choseFun == 3){
               //批量添加数据进入schedule表
-              await addSchedule_manage(form).then(response => {
+              addSchedule_manage(form).then(response => {
                 this.open = false;
               });
               //批量添加数据到clockin表
               // await console.log("创建打卡表")
-              await addClockin(clockinForm).then(response => {
+              addClockin(clockinForm).then(response => {
                 this.open = false;
               });
             }
